@@ -1,5 +1,5 @@
 import { useTheme } from "next-themes";
-import { MoonIcon, SunIcon } from "@heroicons/react/16/solid";
+import { MoonIcon, SunIcon } from "./icons";
 
 function ThemeButton() {
   const { resolvedTheme: theme, setTheme } = useTheme();
@@ -10,9 +10,9 @@ function ThemeButton() {
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {theme === "dark" ? (
-        <SunIcon className="h-5 w-5 m-2" />
-      ) : (
         <MoonIcon className="h-5 w-5 m-2" />
+      ) : (
+        <SunIcon className="h-5 w-5 m-2" />
       )}
     </button>
   );
