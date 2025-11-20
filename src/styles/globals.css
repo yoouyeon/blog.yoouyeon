@@ -1,67 +1,40 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
 @custom-variant dark (&:where(.dark, .dark *));
 
-:root {
-  --color-page: #f4f1ec;
-  --color-text: #1b1b1b;
-  --color-accent: #3478f6;
-  --color-accent-hover: #1e60e2;
-  --color-border: #ddd8d0;
-  --color-muted: #807c75;
-  --color-highlight: #fdf7e3;
-
-  --width-main: 640px; /* tailwind 기준 sm (참고: https://tailwindcss.com/docs/responsive-design)*/
-  --height-footer: 128px;
-  --radius: 0.625rem; /* shadcn-ui 기준 */
-}
-
-.dark {
-  --color-page: #1d1d1a;
-  --color-text: #eaeaea;
-  --color-accent: #539bff;
-  --color-accent-hover: #3478f6;
-  --color-border: #2a2a27;
-  --color-muted: #a5a5a5;
-  --color-highlight: #2f2f2c;
-}
-
 @theme inline {
-  /* --- color --- */
-  --color-page: var(--color-page);
-  --color-text: var(--color-text);
-  --color-mute: var(--color-muted);
-  --color-accent: var(--color-accent);
-  --color-accent-hover: var(--color-accent-hover);
-  --color-highlight: var(--color-highlight);
-
-  /* --- font --- */
   --font-sans: var(--font-pretendard);
   --font-serif: var(--font-noto-serif-kr);
-
-  /* --- size --- */
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
 }
 
 @layer base {
+  html,
   body {
-    @apply m-0 min-h-screen p-0;
-    @apply text-text antialiased;
-    @apply bg-page;
+    @apply size-full;
   }
 
-  hr {
-    @apply my-8;
-    @apply border-mute/50;
+  body {
+    @apply font-sans antialiased;
+    @apply flex flex-col;
+    @apply bg-stone-50 dark:bg-stone-900;
+    @apply text-black/50 dark:text-white/75;
   }
 
-  button {
-    @apply cursor-pointer;
+  header {
+    @apply fixed top-0 left-0 right-0 z-50 py-5;
+    @apply bg-stone-50 dark:bg-stone-900;
+    @apply backdrop-blur-sm saturate-200;
+  }
+
+  main {
+    @apply w-full py-32;
   }
 
   a {
-    @apply underline underline-offset-4 hover:no-underline;
+    @apply underline underline-offset-2 decoration-black/10 dark:decoration-white/10;
+    @apply hover:decoration-black/20 dark:hover:decoration-white/20;
+    @apply hover:text-black dark:hover:text-white;
+    @apply transition-colors duration-300 ease-in-out;
   }
 }

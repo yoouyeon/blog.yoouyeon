@@ -5,11 +5,14 @@ function ThemeButton() {
   const { resolvedTheme: theme, setTheme } = useTheme();
 
   return (
-    <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+    <button
+      className="hover:cursor-pointer rounded-md hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-300 ease-in-out hover:text-black dark:hover:text-white"
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+    >
       {theme === "dark" ? (
-        <SunIcon className="h-5 w-5 text-mute" />
+        <SunIcon className="h-5 w-5 m-2" />
       ) : (
-        <MoonIcon className="h-5 w-5 text-mute" />
+        <MoonIcon className="h-5 w-5 m-2" />
       )}
     </button>
   );

@@ -31,18 +31,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" suppressHydrationWarning>
-      <body>
+    <html
+      lang="ko"
+      suppressHydrationWarning
+      className={`${pretendard.className} ${notoSerifKR.className}`}
+    >
+      {/* FIXME */}
+      <body suppressHydrationWarning>
         <ThemeProvider attribute="class">
-          <div
-            className={`${pretendard.variable} ${notoSerifKR.variable} w-full px-4 mx-auto font-sans`}
-          >
-            <main className="py-16 max-w-(--width-main) mx-auto min-h-[calc(100vh-var(--height-footer))]">
-              <Header />
-              {children}
-            </main>
-            <Footer />
-          </div>
+          <Header />
+          <main className="flex-1 py-32 max-w-screen-sm mx-auto">
+            {children}
+          </main>
+          <Footer />
         </ThemeProvider>
       </body>
       <GoogleAnalytics gaId={GA_ID} />

@@ -2,22 +2,23 @@
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { BLOG_PROFILE } from "@/config/blog";
 const ThemeButton = dynamic(() => import("@/components/ThemeButton"), {
   ssr: false,
 });
 
 export default function Header() {
   return (
-    <div className="flex items-center justify-between gap-2 mb-4">
-      <Link
-        href={"/"}
-        className="text-mute w-full no-underline hover:underline hover:underline-offset-4 hover:decoration-1 hover:decoration-mute/30"
-      >
-        {BLOG_PROFILE.TITLE}
+    <header className="mx-auto max-w-screen-sm px-5 flex items-center justify-between gap-2">
+      <Link href={"/"} className="w-full font-semibold no-underline">
+        blog.yoouyeon
       </Link>
-      {/* <SearchButton /> */}
+      <div className="flex gap-1 items-center">
+        <Link href="/about">about</Link>
+        <span>/</span>
+        <Link href="/tags">tags</Link>
+        {/* <SearchButton /> */}
+      </div>
       <ThemeButton />
-    </div>
+    </header>
   );
 }
