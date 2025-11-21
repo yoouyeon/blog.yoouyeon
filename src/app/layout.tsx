@@ -4,7 +4,7 @@ import { Noto_Serif_KR } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { GA_ID } from "@/config/analytics";
-import Footer from "@/components/Footer";
+import BlogFooter from "@/components/BlogFooter";
 import Header from "@/components/Header";
 import "@/styles/globals.css";
 
@@ -43,7 +43,7 @@ export default function RootLayout({
           <main className="flex-1 py-32 max-w-screen-sm mx-auto">
             {children}
           </main>
-          <Footer />
+          <BlogFooter />
         </ThemeProvider>
       </body>
       <GoogleAnalytics gaId={GA_ID} />
