@@ -8,33 +8,45 @@
   --font-serif: var(--font-noto-serif-kr);
 }
 
-@layer base {
-  html,
-  body {
-    @apply size-full;
+html,
+body {
+  @apply size-full;
+}
+
+body {
+  @apply font-sans antialiased;
+  @apply flex flex-col;
+  @apply bg-stone-50 dark:bg-stone-900;
+  @apply text-black/50 dark:text-white/75;
+}
+
+header {
+  @apply fixed top-0 left-0 right-0 z-50 py-5;
+  @apply bg-stone-50 dark:bg-stone-900;
+  @apply backdrop-blur-sm saturate-200;
+}
+
+main {
+  @apply w-full py-32;
+}
+
+a {
+  @apply underline underline-offset-2 decoration-black/10 dark:decoration-white/30;
+  @apply hover:decoration-black/20 dark:hover:decoration-white/50;
+  @apply hover:text-black dark:hover:text-white;
+  @apply transition-colors duration-300 ease-in-out;
+}
+
+article.prose {
+  h2 {
+    @apply text-black dark:text-white;
+    @apply font-bold text-2xl;
+    @apply mt-14 mb-8;
   }
 
-  body {
-    @apply font-sans antialiased;
-    @apply flex flex-col;
-    @apply bg-stone-50 dark:bg-stone-900;
-    @apply text-black/50 dark:text-white/75;
-  }
-
-  header {
-    @apply fixed top-0 left-0 right-0 z-50 py-5;
-    @apply bg-stone-50 dark:bg-stone-900;
-    @apply backdrop-blur-sm saturate-200;
-  }
-
-  main {
-    @apply w-full py-32;
-  }
-
-  a {
-    @apply underline underline-offset-2 decoration-black/10 dark:decoration-white/10;
-    @apply hover:decoration-black/20 dark:hover:decoration-white/20;
-    @apply hover:text-black dark:hover:text-white;
-    @apply transition-colors duration-300 ease-in-out;
+  h3 {
+    @apply text-black dark:text-white;
+    @apply font-semibold text-xl;
+    @apply mt-10 mb-4;
   }
 }
