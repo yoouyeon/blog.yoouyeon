@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import dayjs from "dayjs";
-import { BLOG_PROFILE } from "@/config/blog";
 import MdxLayout from "@/components/MdxLayout";
+import ArticleHeader from "@/components/ArticleHeader";
 import Giscus from "@/components/Giscus";
 import { getAllPosts } from "@/libs/getAllPosts";
 import { parseMdx } from "@/libs/parseMdx";
@@ -41,19 +40,12 @@ export default async function Post({ params }: PostProps) {
     `@/content/posts/${slug}/index.mdx`
   );
   const { meta } = parseMdx(`src/content/posts/${slug}/index.mdx`);
-  const { frontmatter } = meta;
-  const { title, description, date } = frontmatter;
 
   return (
-    <>
-      <div className="text-sm text-mute font-light">
-        <span>{dayjs(date).format("YYYY년 MM월 DD일")}</span>
-        <span className="ml-1">| by</span>
-        <button>
-          <Link href={"/"}>{BLOG_PROFILE.AUTHOR.KO}</Link>
-        </button>
-      </div>
-      <hr />
+    <div className="px-5">
+      <ArticleHeader {...meta.frontmatter} />
+      {/* <Article /> */}
+      {/* <Giscus /> */}
       <MdxLayout>
         <PostComponent />
       </MdxLayout>
@@ -83,6 +75,6 @@ export default async function Post({ params }: PostProps) {
         </button>
       </section>
       <Giscus />
-    </>
+    </div>
   );
 }
