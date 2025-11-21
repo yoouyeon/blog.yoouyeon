@@ -8,8 +8,8 @@ const ThemeButton = dynamic(() => import("@/components/ThemeButton"), {
 
 export default function BlogHeader() {
   return (
-    <header className="mx-auto max-w-screen-sm px-5 flex items-center justify-between gap-2">
-      <Link href={"/"} className="w-full font-semibold !no-underline">
+    <header className="mx-auto w-full max-w-screen-sm px-5 flex items-center justify-between gap-2">
+      <Link href={"/"} className="flex-1 font-semibold !no-underline">
         blog.yoouyeon
       </Link>
       <div className="flex gap-1 items-center">
