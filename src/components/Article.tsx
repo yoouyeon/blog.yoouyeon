@@ -5,14 +5,26 @@ type ArticleProps = {
 };
 
 export default async function Article({ slug }: ArticleProps) {
-  const { default: Mdx } = await import(`@/content/posts/${slug}/index.mdx`);
+  try {
+    // slug가 안전한 형식인지 검증 (영문자, 숫자, 하이픈만 허용)
+    if (!/^[a-zA-Z0-9-]+$/.test(slug)) {
+      throw new Error("Invalid slug format");
+    }
+    const { default: Mdx } = await import(`@/content/posts/${slug}/index.mdx`);
 
-  return (
-    <>
+    return (
+      <>
+        <article className="prose dark:prose-invert">
+          <Mdx />
+        </article>
+        <Separator type="end" />
+      </>
+    );
+  } catch {
+    return (
       <article className="prose dark:prose-invert">
-        <Mdx />
+        <p>글을 찾을 수 없습니다.</p>
       </article>
-      <Separator type="end" />
-    </>
-  );
+    );
+  }
 }
