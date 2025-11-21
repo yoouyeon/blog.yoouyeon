@@ -20,7 +20,7 @@ async function PostList() {
             >
               <Link
                 href={slug}
-                className="flex gap-4 justify-between no-underline"
+                className="flex gap-4 justify-between !no-underline"
               >
                 <span className="text-black dark:text-white group-hover:text-inherit">
                   {title}
