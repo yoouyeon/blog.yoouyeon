@@ -37,10 +37,11 @@ export async function generateMetadata({
 export default async function Post({ params }: PostProps) {
   const { slug } = await params;
   const { meta } = parseMdx(`src/content/posts/${slug}/index.mdx`);
+  const { title, date } = meta.frontmatter;
 
   return (
     <>
-      <ArticleHeader {...meta.frontmatter} />
+      <ArticleHeader title={title} date={date} />
       <Article slug={slug} />
       <ArticleNavigation />
       <ArticleGiscus />
