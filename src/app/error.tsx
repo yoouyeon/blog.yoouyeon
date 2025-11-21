@@ -17,7 +17,7 @@ export default function Error({
   };
 
   return (
-    <div className="px-5">
+    <>
       <h2 className="flex gap-2 font-semibold text-black dark:text-white">
         Something went wrong!
       </h2>
@@ -29,6 +29,6 @@ export default function Error({
         <LeftIcon className="h-6 w-6" />
         <span>Go back</span>
       </button>
-    </div>
+    </>
   );
 }

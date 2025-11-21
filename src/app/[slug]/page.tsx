@@ -39,11 +39,11 @@ export default async function Post({ params }: PostProps) {
   const { meta } = parseMdx(`src/content/posts/${slug}/index.mdx`);
 
   return (
-    <div className="px-5">
+    <>
       <ArticleHeader {...meta.frontmatter} />
       <Article slug={slug} />
       <ArticleNavigation />
       <ArticleGiscus />
-    </div>
+    </>
   );
 }

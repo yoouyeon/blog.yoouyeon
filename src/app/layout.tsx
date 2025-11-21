@@ -39,7 +39,9 @@ export default function RootLayout({
       <body>
         <ThemeProvider attribute="class">
           <BlogHeader />
-          <main className="flex-1 max-w-screen-sm mx-auto">{children}</main>
+          <main className="flex-1 max-w-screen-sm mx-auto px-5">
+            {children}
+          </main>
           <BlogFooter />
         </ThemeProvider>
         <GoogleAnalytics gaId={GA_ID} />
