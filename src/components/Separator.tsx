@@ -4,8 +4,12 @@ type SeparatorProps = {
   type?: "star" | "end";
 };
 
-function SeparatorWrapper({ children, ...props }: PropsWithChildren) {
-  return <div {...props}>{children}</div>;
+function SeparatorWrapper({ children }: PropsWithChildren) {
+  return (
+    <div className="flex items-center justify-center py-16 w-full">
+      {children}
+    </div>
+  );
 }
 
 export default function Separator({ type = "star" }: SeparatorProps) {
