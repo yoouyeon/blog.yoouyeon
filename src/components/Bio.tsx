@@ -4,13 +4,13 @@ import { GithubIcon, ObsidianIcon } from "./icons";
 export default function Bio() {
   return (
     <section>
-      <p className="flex gap-2 font-semibold text-black dark:text-white">
+      <h2 className="flex gap-2 font-semibold text-black dark:text-white">
         <span>유연</span>
         <span>·</span>
         <span>yoouyeon</span>
         <span className="">—</span>
         <span>frontend developer</span>
-      </p>
+      </h2>
       <p className="my-5">
         <span>
           생각과 배움을 글로 정리했을 때 더 깊이 이해할 수 있어 꾸준히 남기고

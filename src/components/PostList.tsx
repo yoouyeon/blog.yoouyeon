@@ -1,33 +1,40 @@
 import Link from "next/link";
 import dayjs from "dayjs";
-import { PostMeta } from "@/types/post";
+import { getAllPosts } from "@/libs/getAllPosts";
 
-type PostListProps = {
-  posts: PostMeta[];
-};
+async function PostList() {
+  const posts = await getAllPosts();
 
-function PostList({ posts }: PostListProps) {
   return (
-    <ul>
-      {posts.map((meta) => {
-        const { frontmatter, slug } = meta;
-        const { title, date } = frontmatter;
+    <section className="mt-16">
+      <h3 className="font-semibold text-black dark:text-white">{`Writings (${posts.length})`}</h3>
+      <ul className="group pt-5">
+        {posts.map((meta) => {
+          const { frontmatter, slug } = meta;
+          const { title, date } = frontmatter;
 
-        return (
-          <li key={slug} className="flex gap-4 py-2">
-            <Link
-              href={slug}
-              className="whitespace-nowrap w-full hover:underline hover:decoration-accent"
+          return (
+            <li
+              key={slug}
+              className="py-4 group-hover:text-black/30 hover:!text-black dark:group-hover:text-white/30 dark:hover:!text-white"
             >
-              <span>{title}</span>
-            </Link>
-            <span className="text-sm text-mute whitespace-nowrap">
-              {dayjs(date).format("YY.MM.DD")}
-            </span>
-          </li>
-        );
-      })}
-    </ul>
+              <Link
+                href={slug}
+                className="flex gap-4 justify-between no-underline"
+              >
+                <span className="text-black dark:text-white group-hover:text-inherit">
+                  {title}
+                </span>
+                <div className="hidden md:block my-auto h-[1px] bg-black/5 dark:bg-white/5 flex-1" />
+                <span className="text-sm whitespace-nowrap tabular-nums">
+                  {dayjs(date).format("YYYY.MM.DD")}
+                </span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
   );
 }
 
