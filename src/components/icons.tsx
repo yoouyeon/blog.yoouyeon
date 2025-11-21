@@ -6,6 +6,7 @@ export function GithubIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      role="img"
       width="1em"
       height="1em"
       viewBox="0 0 24 24"
@@ -44,6 +45,7 @@ export function SunIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      role="img"
       width="1em"
       height="1em"
       viewBox="0 0 24 24"
@@ -62,6 +64,7 @@ export function MoonIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      role="img"
       width="1em"
       height="1em"
       viewBox="0 0 24 24"
@@ -80,6 +83,7 @@ export function LeftIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      role="img"
       width="1em"
       height="1em"
       viewBox="0 0 24 24"
@@ -98,6 +102,7 @@ export function CopyIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      role="img"
       width="1em"
       height="1em"
       viewBox="0 0 24 24"
@@ -116,6 +121,7 @@ export function CheckIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      role="img"
       width="1em"
       height="1em"
       viewBox="0 0 24 24"
@@ -134,6 +140,7 @@ export function UpIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      role="img"
       width="1em"
       height="1em"
       viewBox="0 0 24 24"
