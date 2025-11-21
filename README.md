@@ -9,3 +9,9 @@ My personal blog
 - [Tailwind CSS](https://tailwindcss.com/)
 - [mdx](https://mdxjs.com/)
 - [render](https://render.com/)
+
+## design inspiration
+
+- https://astro-nano-demo.vercel.app/
+- https://zaduma.vercel.app/
+- https://bepyan.me/
