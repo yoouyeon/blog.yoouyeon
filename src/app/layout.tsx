@@ -40,9 +40,7 @@ export default function RootLayout({
       <body suppressHydrationWarning>
         <ThemeProvider attribute="class">
           <BlogHeader />
-          <main className="flex-1 py-32 max-w-screen-sm mx-auto">
-            {children}
-          </main>
+          <main className="flex-1 max-w-screen-sm mx-auto">{children}</main>
           <BlogFooter />
         </ThemeProvider>
         <GoogleAnalytics gaId={GA_ID} />
