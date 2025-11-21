@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import dayjs from "dayjs";
-import { ArrowUturnLeftIcon } from "@heroicons/react/16/solid";
 import { BLOG_PROFILE } from "@/config/blog";
-import PageHeader from "@/components/PageHeader";
 import MdxLayout from "@/components/MdxLayout";
 import Giscus from "@/components/Giscus";
 import { getAllPosts } from "@/libs/getAllPosts";
 import { parseMdx } from "@/libs/parseMdx";
-import Button from "@/components/ui/Button";
 
 export const dynamicParams = false;
 
@@ -49,13 +46,12 @@ export default async function Post({ params }: PostProps) {
 
   return (
     <>
-      <PageHeader title={title} description={description} />
       <div className="text-sm text-mute font-light">
         <span>{dayjs(date).format("YYYY년 MM월 DD일")}</span>
         <span className="ml-1">| by</span>
-        <Button variant={"link"} asChild>
+        <button>
           <Link href={"/"}>{BLOG_PROFILE.AUTHOR.KO}</Link>
-        </Button>
+        </button>
       </div>
       <hr />
       <MdxLayout>
@@ -66,19 +62,25 @@ export default async function Post({ params }: PostProps) {
         aria-orientation="horizontal"
         className="flex items-center py-16"
       >
-        <div className="flex-grow border-t border-mute/50" aria-hidden="true" />
+        <div
+          className="flex-grow border-t border-border/50"
+          aria-hidden="true"
+        />
         <span className="px-3 text-sm whitespace-nowrap font-light text-mute">
           end
         </span>
-        <div className="flex-grow border-t border-mute/50" aria-hidden="true" />
+        <div
+          className="flex-grow border-t border-border/50"
+          aria-hidden="true"
+        />
       </div>
       <section role="navigation" className="mb-16">
-        <Button asChild>
+        <button>
           <Link href={"/writings"}>
-            <ArrowUturnLeftIcon className="w-4 h-4" />
+            {/* <ArrowUturnLeftIcon className="w-4 h-4" /> */}
             목록으로 돌아가기
           </Link>
-        </Button>
+        </button>
       </section>
       <Giscus />
     </>
