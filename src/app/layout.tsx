@@ -36,8 +36,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${pretendard.className} ${notoSerifKR.className}`}
     >
-      {/* FIXME */}
-      <body suppressHydrationWarning>
+      <body>
         <ThemeProvider attribute="class">
           <BlogHeader />
           <main className="flex-1 max-w-screen-sm mx-auto">{children}</main>
