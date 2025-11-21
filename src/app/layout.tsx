@@ -45,8 +45,8 @@ export default function RootLayout({
           </main>
           <BlogFooter />
         </ThemeProvider>
+        <GoogleAnalytics gaId={GA_ID} />
       </body>
-      <GoogleAnalytics gaId={GA_ID} />
     </html>
   );
 }
