@@ -31,7 +31,7 @@ export default function CopyButton({ text }: CodeCopyButtonProps) {
       timeoutRef.current = setTimeout(() => {
         setCopied(false);
         setFailed(false);
-      });
+      }, 1200);
     }
   };
   // bg-white dark:bg-black hover:bg-black/15 dark:hover:bg-white/15
