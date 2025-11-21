@@ -35,7 +35,7 @@ export default function ArticleGiscus() {
     script.crossOrigin = "anonymous";
 
     giscusRef.current?.appendChild(script);
-  }, [theme]);
+  }, [theme, CATEGORY, CATEGORY_ID, REPO, REPO_ID]);
 
   return <section ref={giscusRef} id="giscus" />;
 }
