@@ -6,7 +6,7 @@ const ThemeButton = dynamic(() => import("@/components/ThemeButton"), {
   ssr: false,
 });
 
-export default function Header() {
+export default function BlogHeader() {
   return (
     <header className="mx-auto max-w-screen-sm px-5 flex items-center justify-between gap-2">
       <Link href={"/"} className="w-full font-semibold !no-underline">

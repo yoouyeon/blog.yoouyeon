@@ -4,8 +4,8 @@ import { Noto_Serif_KR } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { GA_ID } from "@/config/analytics";
+import BlogHeader from "@/components/BlogHeader";
 import BlogFooter from "@/components/BlogFooter";
-import Header from "@/components/Header";
 import "@/styles/globals.css";
 
 const notoSerifKR = Noto_Serif_KR({
@@ -39,7 +39,7 @@ export default function RootLayout({
       {/* FIXME */}
       <body suppressHydrationWarning>
         <ThemeProvider attribute="class">
-          <Header />
+          <BlogHeader />
           <main className="flex-1 py-32 max-w-screen-sm mx-auto">
             {children}
           </main>
