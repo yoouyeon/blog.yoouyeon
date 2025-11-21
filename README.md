@@ -13,5 +13,5 @@ My personal blog
 ## design inspiration
 
 - [Astro Starter Nano Demo](https://astro-nano-demo.vercel.app/)
-- [Astro Stater zaduma Demo](https://zaduma.vercel.app/)
+- [Astro Starter zaduma Demo](https://zaduma.vercel.app/)
 - [김평안님 블로그](https://bepyan.me/)
