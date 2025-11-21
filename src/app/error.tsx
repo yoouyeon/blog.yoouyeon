@@ -2,10 +2,8 @@
 
 import { LeftIcon } from "@/components/icons";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 
 export default function Error({
-  error,
   reset,
 }: {
   error: Error & { digest?: string };
