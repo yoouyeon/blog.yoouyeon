@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 export default function Error({
   reset,
 }: {
-  error: Error & { digest?: string };
+  err: Error & { digest?: string };
   reset: () => void;
 }) {
   const router = useRouter();
