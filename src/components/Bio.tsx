@@ -8,7 +8,7 @@ export default function Bio() {
         <span>유연</span>
         <span>·</span>
         <span>yoouyeon</span>
-        <span className="">—</span>
+        <span>—</span>
         <span>frontend developer</span>
       </h2>
       <p className="my-5">
@@ -24,14 +24,16 @@ export default function Bio() {
       <div className="flex gap-1">
         <Link
           href="https://github.com/yoouyeon"
-          className="flex gap-1 items-center !no-underline  rounded-md hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-300 ease-in-out p-1"
+          rel="noopener noreferrer"
+          className="flex gap-1 items-center !no-underline rounded-md hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-300 ease-in-out p-1"
         >
           <GithubIcon />
           <span className="text-sm">GitHub</span>
         </Link>
         <Link
           href="https://log.yoouyeon.dev/"
-          className="flex gap-1 items-center !no-underline  rounded-md hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-300 ease-in-out p-1"
+          rel="noopener noreferrer"
+          className="flex gap-1 items-center !no-underline rounded-md hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-300 ease-in-out p-1"
         >
           <ObsidianIcon />
           <span className="text-sm">Wiki</span>
