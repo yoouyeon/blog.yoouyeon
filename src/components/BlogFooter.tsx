@@ -1,3 +1,4 @@
+import { AUTHOR, LINKS } from "@/config/blog";
 import Link from "next/link";
 
 export default function BlogFooter() {
@@ -5,8 +6,8 @@ export default function BlogFooter() {
     <footer className="flex flex-col mx-auto w-full max-w-screen-sm px-5 py-12">
       <div>
         <span>Made with ♥ by </span>
-        <Link rel="noopener noreferrer" href="https://github.com/yoouyeon">
-          yoouyeon
+        <Link rel="noopener noreferrer" href={LINKS.GITHUB}>
+          {AUTHOR.EN_NAME}
         </Link>
       </div>
       <span>© 2025</span>
