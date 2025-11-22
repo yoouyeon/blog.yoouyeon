@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
 import { GISCUS_CONFIG } from "@/config/giscus";
 
-export default function Giscus() {
+export default function ArticleGiscus() {
   const giscusRef = useRef<HTMLDivElement>(null);
   const { resolvedTheme: theme } = useTheme();
   const { REPO, REPO_ID, CATEGORY, CATEGORY_ID } = GISCUS_CONFIG;
@@ -35,7 +35,7 @@ export default function Giscus() {
     script.crossOrigin = "anonymous";
 
     giscusRef.current?.appendChild(script);
-  }, [theme]);
+  }, [theme, CATEGORY, CATEGORY_ID, REPO, REPO_ID]);
 
   return <section ref={giscusRef} id="giscus" />;
 }

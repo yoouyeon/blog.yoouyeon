@@ -1,21 +1,17 @@
-import PageHeader from "@/components/PageHeader";
-import Button from "@/components/ui/Button";
-import { ArrowUturnLeftIcon } from "@heroicons/react/16/solid";
+import { LeftIcon } from "@/components/icons";
 import Link from "next/link";
 
 export default function NotFound() {
   return (
     <>
-      <PageHeader
-        title={"404 Not Found"}
-        description={"페이지를 찾을 수 없습니다."}
-      />
-      <Button asChild className="mt-8">
-        <Link href={"/"}>
-          <ArrowUturnLeftIcon className="w-4 h-4" />
-          홈으로 돌아가기
-        </Link>
-      </Button>
+      <h2 className="flex gap-2 font-semibold text-black dark:text-white">
+        404 Not Found
+      </h2>
+      <p className="my-5">페이지를 찾을 수 없습니다...</p>
+      <Link href="/" className="flex items-center w-fit">
+        <LeftIcon className="h-6 w-6" />
+        <span>Back to blog</span>
+      </Link>
     </>
   );
 }

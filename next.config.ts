@@ -13,7 +13,6 @@ const nextConfig = {
 /** @type {import('codehike/mdx').CodeHikeConfig} */
 const chConfig = {
   components: { code: "CodeBlock" },
-  lineNumbers: true,
 };
 
 const withMDX = createMDX({
