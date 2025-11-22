@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
-import { FrontMatter } from "@/types/post";
 import Link from "next/link";
+import { FrontMatter } from "@/types/post";
+import { AUTHOR } from "@/config/blog";
 import { LeftIcon } from "./icons";
 
 export default function ArticleHeader({ title, date }: FrontMatter) {
@@ -20,7 +21,7 @@ export default function ArticleHeader({ title, date }: FrontMatter) {
         </h1>
         <div>
           <span>by </span>
-          <Link href={"/"}>유연</Link>
+          <Link href={"/"}>{AUTHOR.KO_NAME}</Link>
         </div>
       </div>
     </section>

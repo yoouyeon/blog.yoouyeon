@@ -1,15 +1,16 @@
 import Link from "next/link";
-import { GithubIcon, ObsidianIcon } from "./icons";
+import { AlternateMailIcon, GithubIcon, ObsidianIcon } from "./icons";
+import { AUTHOR, LINKS } from "@/config/blog";
 
 export default function Bio() {
   return (
     <section>
       <h2 className="flex gap-2 font-semibold text-black dark:text-white">
-        <span>유연</span>
+        <span>{AUTHOR.KO_NAME}</span>
         <span>·</span>
-        <span>yoouyeon</span>
+        <span>{AUTHOR.EN_NAME}</span>
         <span>—</span>
-        <span>frontend developer</span>
+        <span>{AUTHOR.DESCRIPTION}</span>
       </h2>
       <p className="my-5">
         <span>
@@ -23,19 +24,26 @@ export default function Bio() {
       </p>
       <div className="flex gap-1">
         <Link
-          href="https://github.com/yoouyeon"
+          href={LINKS.EMAIL}
+          className="flex gap-1 items-center !no-underline rounded-md hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-300 ease-in-out p-1"
+        >
+          <AlternateMailIcon className="h-5 w-5" />
+          <span className="text-sm">Mail</span>
+        </Link>
+        <Link
+          href={LINKS.GITHUB}
           rel="noopener noreferrer"
           className="flex gap-1 items-center !no-underline rounded-md hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-300 ease-in-out p-1"
         >
-          <GithubIcon />
+          <GithubIcon className="h-5 w-5" />
           <span className="text-sm">GitHub</span>
         </Link>
         <Link
-          href="https://log.yoouyeon.dev/"
+          href={LINKS.WIKI}
           rel="noopener noreferrer"
           className="flex gap-1 items-center !no-underline rounded-md hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-300 ease-in-out p-1"
         >
-          <ObsidianIcon />
+          <ObsidianIcon className="h-5 w-5" />
           <span className="text-sm">Wiki</span>
         </Link>
       </div>

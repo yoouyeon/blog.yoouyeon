@@ -1,5 +1,7 @@
 import remarkGfm from "remark-gfm";
 import remarkFrontmatter from "remark-frontmatter";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { remarkCodeHike, recmaCodeHike } from "codehike/mdx";
 import stripFrontmatter from "@/libs/stripFrontmatter";
 import { rewriteAssetsPath } from "@/libs/rewriteAssetsPath";
@@ -23,6 +25,18 @@ const withMDX = createMDX({
       stripFrontmatter,
       rewriteAssetsPath,
       [remarkCodeHike, chConfig],
+    ],
+    rehypePlugins: [
+      rehypeSlug,
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: "wrap",
+          properties: {
+            className: ["heading-link"],
+          },
+        },
+      ],
     ],
     recmaPlugins: [[recmaCodeHike, chConfig]],
   },
