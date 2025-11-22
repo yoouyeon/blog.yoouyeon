@@ -11,6 +11,7 @@
 html,
 body {
   @apply size-full;
+  @apply scroll-smooth;
 }
 
 body {
@@ -38,6 +39,10 @@ a {
 }
 
 article.prose {
+  h2,
+  h3 {
+    @apply scroll-mt-20;
+  }
   h2 {
     @apply text-black dark:text-white;
     @apply font-bold text-2xl;
@@ -48,5 +53,14 @@ article.prose {
     @apply text-black dark:text-white;
     @apply font-semibold text-xl;
     @apply mt-10 mb-4;
+  }
+  .heading-link {
+    @apply relative !no-underline;
+  }
+
+  .heading-link:hover {
+    @apply before:content-['#'];
+    @apply before:absolute before:-left-6;
+    @apply before:text-black/50 dark:before:text-white/50;
   }
 }
