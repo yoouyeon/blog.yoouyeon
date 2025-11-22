@@ -34,7 +34,7 @@ export default function RootLayout({
     <html
       lang="ko"
       suppressHydrationWarning
-      className={`${pretendard.className} ${notoSerifKR.className}`}
+      className={`${pretendard.variable} ${notoSerifKR.variable}`}
     >
       <body>
         <ThemeProvider attribute="class">
