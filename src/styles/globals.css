@@ -63,4 +63,8 @@ article.prose {
     @apply before:absolute before:-left-6;
     @apply before:text-black/50 dark:before:text-white/50;
   }
+
+  a {
+    @apply break-words;
+  }
 }
