@@ -2,7 +2,7 @@
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:where(.dark, .dark *));
-
+/*  */
 @theme inline {
   --font-sans: var(--font-pretendard);
   --font-serif: var(--font-noto-serif-kr);
@@ -66,5 +66,11 @@ article.prose {
 
   a {
     @apply break-words;
+  }
+
+  blockquote {
+    @apply font-serif text-sm;
+    @apply not-italic;
+    @apply text-[var(--tw-prose-body)];
   }
 }
