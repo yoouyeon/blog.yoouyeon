@@ -17,14 +17,32 @@ export const validateFrontmatter = (
 
   const fm = rawFm as Record<string, unknown>;
 
+  // 제목 검증
   if (typeof fm.title !== "string" || fm.title.trim() === "") {
     errors.push("title이 존재하지 않거나 빈 문자열입니다.");
   }
 
-  if (!(fm.date instanceof Date) || isNaN(fm.date.getTime())) {
-    errors.push("date가 유효한 날짜가 아닙니다.");
+  // 날짜 검증
+  let dateString: string | null = null;
+  if (typeof fm.date === "string") {
+    if (isNaN(Date.parse(fm.date))) {
+      errors.push("date가 유효한 날짜 형식이 아닙니다. : 문자열 파싱 실패");
+    } else {
+      dateString = new Date(fm.date).toISOString();
+    }
+  } else if (fm.date instanceof Date) {
+    if (isNaN(fm.date.getTime())) {
+      errors.push("date가 유효한 날짜 형식이 아닙니다. : Date 객체 파싱 실패");
+    } else {
+      dateString = fm.date.toISOString();
+    }
+  } else {
+    errors.push(
+      "date가 유효한 날짜 형식이 아닙니다. : 문자열 또는 Date 객체가 아님"
+    );
   }
 
+  // description 검증
   if (
     fm.description !== undefined &&
     (typeof fm.description !== "string" || fm.description.trim() === "")
@@ -40,7 +58,7 @@ export const validateFrontmatter = (
 
   return {
     title: fm.title,
-    date: fm.date,
+    date: dateString as string,
     description: fm.description,
   } as FrontMatter;
 };
