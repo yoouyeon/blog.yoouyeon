@@ -21,8 +21,8 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "yoouyeon.dev",
-  description: "Frontend developer yoouyeon",
+  title: "blog.yoouyeon.dev",
+  description: "yoouyeon blog",
 };
 
 export default function RootLayout({
