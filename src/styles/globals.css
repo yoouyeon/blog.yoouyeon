@@ -67,4 +67,10 @@ article.prose {
   a {
     @apply break-words;
   }
+
+  blockquote {
+    @apply font-serif text-sm;
+    @apply not-italic;
+    @apply text-[var(--tw-prose-body)];
+  }
 }
